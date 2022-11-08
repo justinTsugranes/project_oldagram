@@ -1,30 +1,53 @@
-const posts = [
-    {
-        name: "Vincent van Gogh",
-        username: "vincey1853",
-        location: "Zundert, Netherlands",
-        avatar: "images/avatar-vangogh.jpg",
-        post: "images/post-vangogh.jpg",
-        comment: "just took a few mushrooms lol",
-        likes: 21
-    },
-    {
-        name: "Gustave Courbet",
-        username: "gus1819",
-        location: "Ornans, France",
-        avatar: "images/avatar-courbet.jpg",
-        post: "images/post-courbet.jpg",
-        comment: "i'm feelin a bit stressed tbh",
-        likes: 4
-    },
-        {
-        name: "Joseph Ducreux",
-        username: "jd1735",
-        location: "Paris, France",
-        avatar: "images/avatar-ducreux.jpg",
-        post: "images/post-ducreux.jpg",
-        comment: "gm friends! which coin are YOU stacking up today?? post below and WAGMI!",
-        likes: 152
-    }
-]
+import { posts } from './posts.js'
 
+/* get the counts form posts.js */
+let countOne = posts[0].likes
+let countTwo = posts[1].likes
+let countThree = posts[2].likes
+
+/* Capture the elements */
+const postOneLike = document.getElementById('post-one-like')
+const postOneLikes = document.getElementById('post-one-likes')
+const postTwoLike = document.getElementById('post-two-like')
+const postTwoLikes = document.getElementById('post-two-likes')
+const postThreeLike = document.getElementById('post-three-like')
+const postThreeLikes = document.getElementById('post-three-likes')
+
+/* Listen for button click */
+postOneLike.addEventListener('click', function () {
+  incrementOne()
+})
+postTwoLike.addEventListener('click', function () {
+  incrementTwo()
+})
+postThreeLike.addEventListener('click', function () {
+  incrementThree()
+})
+
+/* Increment the count */
+function incrementOne() {
+  countOne += 1
+  postOneLikes.textContent = `${countOne.toLocaleString('en-US')} likes`
+}
+function incrementTwo() {
+  countTwo += 1
+  postTwoLikes.textContent = `${countTwo.toLocaleString('en-US')} likes`
+}
+function incrementThree() {
+  countThree += 1
+  postThreeLikes.textContent = `${countThree.toLocaleString('en-US')} likes`
+}
+
+/* share the post */
+const postOneShare = document.getElementById('post-one-share')
+
+postOneShare.addEventListener('click', function () {
+  shareToTwitter()
+})
+
+let params = 'menubar=no,toolbar=no,status=no,width=570,height=570' // for window
+
+function shareToTwitter() {
+  let shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}&via=${user_id}&hashtags=${hash_tags}`
+  window.open(shareUrl, 'NewWindow', params)
+}
