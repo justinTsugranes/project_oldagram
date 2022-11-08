@@ -37,17 +37,3 @@ function incrementThree() {
   countThree += 1
   postThreeLikes.textContent = `${countThree.toLocaleString('en-US')} likes`
 }
-
-/* share the post */
-const postOneShare = document.getElementById('post-one-share')
-
-postOneShare.addEventListener('click', function () {
-  shareToTwitter()
-})
-
-let params = 'menubar=no,toolbar=no,status=no,width=570,height=570' // for window
-
-function shareToTwitter() {
-  let shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}&via=${user_id}&hashtags=${hash_tags}`
-  window.open(shareUrl, 'NewWindow', params)
-}
