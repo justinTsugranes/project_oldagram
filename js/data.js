@@ -1,3 +1,12 @@
+const headerData = {
+  header: {
+    logo: 'images/logo.png',
+    userAvatar: 'images/user-avatar.jpg',
+  },
+}
+
+// const userData = {}
+
 const postsData = {
   userOne: {
     name: 'Vincent van Gogh',
@@ -29,4 +38,4 @@ const postsData = {
   },
 }
 
-export { postsData }
+export { headerData, postsData }

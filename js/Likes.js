@@ -1,18 +1,4 @@
-import { postsData } from './data.js'
-import Card from './Card.js'
-
-const postOne = new Card(postsData.userOne)
-const postTwo = new Card(postsData.userTwo)
-const postThree = new Card(postsData.userThree)
-
-function render() {
-  document.getElementById('cardOne').innerHTML = postOne.getCardHtml()
-  document.getElementById('cardTwo').innerHTML = postTwo.getCardHtml()
-  document.getElementById('cardThree').innerHTML = postThree.getCardHtml()
-}
-
-/* call render posts */
-render()
+// import { postsData } from './data'
 
 /* TODO Refactor the like functions to toggle a boolean so count is either incremented or decremented. */
 
@@ -52,4 +38,20 @@ function incrementTwo() {
 function incrementThree() {
   countThree += 1
   postThreeLikes.textContent = `${countThree.toLocaleString('en-US')} likes`
+}
+
+/* declare count */
+let count = 0
+/* TODO: what do i set like icon to??? Do i listen on the whole window for a click?*/
+let likeIcon
+
+/* incremeent the count */
+function increment() {
+  count += 1
+}
+
+function incrementLikes() {
+  likeIcon.addEventListener('click', function () {
+    increment()
+  })
 }
