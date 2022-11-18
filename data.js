@@ -1,5 +1,5 @@
-export const posts = [
-  {
+const postsData = {
+  userOne: {
     name: 'Vincent van Gogh',
     username: 'vincey1853',
     location: 'Zundert, Netherlands',
@@ -8,7 +8,7 @@ export const posts = [
     comment: 'just took a few mushrooms lol',
     likes: 21492,
   },
-  {
+  userTwo: {
     name: 'Gustave Courbet',
     username: 'gus1819',
     location: 'Ornans, France',
@@ -17,7 +17,7 @@ export const posts = [
     comment: "i'm feelin a bit stressed tbh",
     likes: 12502,
   },
-  {
+  userThree: {
     name: 'Joseph Ducreux',
     username: 'jd1735',
     location: 'Paris, France',
@@ -27,4 +27,6 @@ export const posts = [
       'gm friends! which coin are YOU stacking up today?? post below and WAGMI!',
     likes: 15137,
   },
-]
+}
+
+export { postsData }

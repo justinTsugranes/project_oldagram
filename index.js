@@ -1,4 +1,20 @@
-import { posts } from './posts.js'
+import { postsData } from './data.js'
+import Card from './Card.js'
+
+const postOne = new Card(postsData.userOne)
+const postTwo = new Card(postsData.userTwo)
+const postThree = new Card(postsData.userThree)
+
+function render() {
+  document.getElementById('cardOne').innerHTML = postOne.getCardHtml()
+  document.getElementById('cardTwo').innerHTML = postTwo.getCardHtml()
+  document.getElementById('cardThree').innerHTML = postThree.getCardHtml()
+}
+
+/* call render posts */
+render()
+
+/* TODO Refactor the like functions to toggle a boolean so count is either incremented or decremented. */
 
 /* get the counts form posts.js */
 let countOne = posts[0].likes
